@@ -11,7 +11,7 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
           <form @submit.prevent="submit" class="mb-6">
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7"
+              class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 mt-5 mx-7"
             >
               <div class="grid grid-cols-1">
                 <label
@@ -67,6 +67,34 @@
                   "
                   type="text"
                   placeholder="Piso"
+                />
+              </div>
+                  <div class="grid grid-cols-1">
+                <label
+                  class="
+                    uppercase
+                    md:text-sm
+                    text-xs text-gray-500 text-light
+                    font-semibold
+                  "
+                  >Especificaciones </label
+                >
+                <input
+                  id="tipo_equipo"
+                  v-model="form.specs"
+                  class="
+                    py-2
+                    px-3
+                    rounded-lg
+                    border-2 border-purple-300
+                    mt-1
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-purple-600
+                    focus:border-transparent
+                  "
+                  type="text"
+                  placeholder="Tipo"
                 />
               </div>
             </div>
@@ -156,7 +184,7 @@
             
             
               <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7"
+              class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 mt-5 mx-7"
             >
               <div class="grid grid-cols-1">
                 <label
@@ -214,6 +242,7 @@
                   placeholder="Tipo"
                 />
               </div>
+          
             </div>
 
 

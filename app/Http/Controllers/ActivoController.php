@@ -39,7 +39,8 @@ class ActivoController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Activo/FormCrear');
+        $ubicaciones = Ubicacion::all();
+        return Inertia::render('Activo/FormCrear', ['ubicaciones' => $ubicaciones] );
 
     }
 
@@ -58,6 +59,8 @@ class ActivoController extends Controller
             'direccion_ip' => 'required',
             'ubicacion_id' => 'required',
             'tipo_activo' => 'required',
+            'serie_activo' => 'required',
+            'specs' => 'required'
 
     
         ]);
@@ -83,9 +86,11 @@ class ActivoController extends Controller
      * @param  \App\Models\Activo  $activo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activo $activo)
+    public function edit($id_activo)
     {
-        //
+        $activo = Activo::find($id_activo);
+        $ubicaciones = Ubicacion::all();
+        return Inertia::render('Activo/FormEditar', ['activo' => $activo ,'ubicaciones' => $ubicaciones ] );
     }
 
     /**
@@ -95,9 +100,12 @@ class ActivoController extends Controller
      * @param  \App\Models\Activo  $activo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activo $activo)
+    public function update(Request $request, $id_activo)
     {
-        //
+        $activo = Activo::find($id_activo);
+
+        $activo-> update($request->all());
+        return Redirect::route('activos.index');
     }
 
     /**
@@ -106,8 +114,10 @@ class ActivoController extends Controller
      * @param  \App\Models\Activo  $activo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activo $activo)
+    public function destroy($id)
     {
-        //
+        $activo = Activo::find($id);
+        $activo->delete();
+        return Redirect::route('activos.index');
     }
 }

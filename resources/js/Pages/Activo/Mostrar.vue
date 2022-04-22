@@ -22,7 +22,7 @@
             "
             type="button"
           >
-            Nuevo</Link
+            Agregar </Link
           >
           <table
             class="
@@ -104,6 +104,20 @@
                     tracking-wider
                   "
                 >
+                  Serie
+                </th>
+                          <th
+                  scope="col"
+                  class="
+                    px-6
+                    py-3
+                    text-center text-xs
+                    font-medium
+                    text-gray-100
+                    uppercase
+                    tracking-wider
+                  "
+                >
                   Direccion IP
                 </th>
                 <th
@@ -151,7 +165,7 @@
               </tr>
             </thead>
             <tbody class="bg-gray-700 bordr-b border-gray-600 text-gray-200">
-              <tr v-for="activo in activos" :key="activo.id">
+              <tr v-for="activo in activos" :key="activo.id_activo">
                 <div class="flex items-center">
                   <div class="ml-4">
                     <td class="text-sm font-medium">
@@ -204,6 +218,20 @@
                 >
                   {{ activo.tipo_activo }}
                 </td>
+                    <td
+                  scope="col"
+                  class="
+                    px-6
+                    py-3
+                    text-center text-xs
+                    font-medium
+                    text-gray-100
+                    uppercase
+                    tracking-wider
+                  "
+                >
+                  {{ activo.serie_activo }}
+                </td>
     <td
                   scope="col"
                   class="
@@ -253,7 +281,7 @@
 
                 <td class="flex justify-center m-2">
                   <Link
-                    :href="route('activos.edit', activo.id)"
+                    :href="route('activos.edit', activo.id_activo)"
                     class="
                       ml-2
                       flex-shrink-0
@@ -272,7 +300,7 @@
                   >
                   <Link
                     method="DELETE"
-                    :href="route('activos.destroy', activo.id)"
+                    :href="route('activos.destroy', activo.id_activo)"
                     class="
                       ml-2
                       flex-shrink-0

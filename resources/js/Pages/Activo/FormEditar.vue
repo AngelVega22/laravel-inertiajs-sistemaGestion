@@ -2,7 +2,7 @@
   <app-layout>
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Agregar activo
+        Editar Activo
       </h2>
     </template>
 
@@ -38,10 +38,9 @@
                     focus:border-transparent
                   "
                   type="text"
-                  placeholder="Codigo "
+                  placeholder="codigo_activo"
                 />
               </div>
-
               <div class="grid grid-cols-1">
                 <label
                   class="
@@ -50,7 +49,7 @@
                     text-xs text-gray-500 text-light
                     font-semibold
                   "
-                  >Modelo</label
+                  >Modelo </label
                 >
                 <input
                   id="modelo_equipo"
@@ -67,12 +66,12 @@
                     focus:border-transparent
                   "
                   type="text"
-                  placeholder="Modelo"
+                  placeholder="Piso"
                 />
               </div>
             </div>
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7"
+              class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 mt-5 mx-7"
             >
               <div class="grid grid-cols-1">
                 <label
@@ -99,10 +98,11 @@
                     focus:border-transparent
                   "
                   type="text"
-                  placeholder="Cantidad"
+                  placeholder="Oficina"
                 />
               </div>
-              <div class="grid grid-cols-1">
+
+               <div class="grid grid-cols-1">
                 <label
                   class="
                     uppercase
@@ -130,9 +130,32 @@
                   placeholder="Direccion IP"
                 />
               </div>
+               <div class="grid grid-cols-1">
+                <label
+                  class="
+                    uppercase
+                    md:text-sm
+                    text-xs text-gray-500 text-light
+                    font-semibold
+                  "
+                  >Ubicacion</label
+                >
+                     <select-input v-model="form.ubicacion_id" label="ubicacion">
+                  <option
+                    v-for="ubicacion in ubicaciones"
+                    :key="ubicacion.id"
+                    :value="ubicacion.id"
+                  >
+                    {{ ubicacion.area }}
+                  </option> 
+                </select-input>           
+              </div>
+              
+            
             </div>
-
-            <div
+            
+            
+              <div
               class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7"
             >
               <div class="grid grid-cols-1">
@@ -143,10 +166,38 @@
                     text-xs text-gray-500 text-light
                     font-semibold
                   "
-                  >Tipo</label
+                  >Serie</label
                 >
                 <input
-                  id="tipo_activo"
+                  id="serie_activo"
+                  v-model="form.serie_activo"
+                  class="
+                    py-2
+                    px-3
+                    rounded-lg
+                    border-2 border-purple-300
+                    mt-1
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-purple-600
+                    focus:border-transparent
+                  "
+                  type="text"
+                  placeholder="serie_activo"
+                />
+              </div>
+              <div class="grid grid-cols-1">
+                <label
+                  class="
+                    uppercase
+                    md:text-sm
+                    text-xs text-gray-500 text-light
+                    font-semibold
+                  "
+                  >Tipo </label
+                >
+                <input
+                  id="tipo_equipo"
                   v-model="form.tipo_activo"
                   class="
                     py-2
@@ -163,104 +214,11 @@
                   placeholder="Tipo"
                 />
               </div>
-              <div class="grid grid-cols-1">
-                <label
-                  class="
-                    uppercase
-                    md:text-sm
-                    text-xs text-gray-500 text-light
-                    font-semibold
-                  "
-                  >Area</label
-                >
-                <!-- <input
-                  id="ubicacion_id"
-                  v-model="form.ubicacion_id"
-                  class="
-                    py-2
-                    px-3
-                    rounded-lg
-                    border-2 border-purple-300
-                    mt-1
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-purple-600
-                    focus:border-transparent
-                  "
-                  type="text"
-                  placeholder="Ubicación"
-                /> -->
-                <select-input v-model="form.ubicacion_id" label="ubicacion">
-                  <option
-                    v-for="ubicacion in ubicaciones"
-                    :key="ubicacion.id"
-                    :value="ubicacion.id"
-                  >
-                    {{ ubicacion.area }}
-                  </option>
-                </select-input>
-              </div>
             </div>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7"
-            >
-              <div class="grid grid-cols-1">
-                <label
-                  class="
-                    uppercase
-                    md:text-sm
-                    text-xs text-gray-500 text-light
-                    font-semibold
-                  "
-                  >Serie
-                </label>
-                <input
-                  id="serie_activo"
-                  v-model="form.serie_activo"
-                  class="
-                    py-2
-                    px-3
-                    rounded-lg
-                    border-2 border-purple-300
-                    mt-1
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-purple-600
-                    focus:border-transparent
-                  "
-                  type="text"
-                  placeholder="Serie"
-                />
-              </div>
-              <div class="grid grid-cols-1">
-                <label
-                  class="
-                    uppercase
-                    md:text-sm
-                    text-xs text-gray-500 text-light
-                    font-semibold
-                  "
-                  >Especificaciones
-                </label>
-                <input
-                  id="specs"
-                  v-model="form.specs"
-                  class="
-                    py-2
-                    px-3
-                    rounded-lg
-                    border-2 border-purple-300
-                    mt-1
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-purple-600
-                    focus:border-transparent
-                  "
-                  type="text"
-                  placeholder="Especificaciones"
-                />
-              </div>
-            </div>
+
+
+            
+            
             <div class="flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5">
               <Link
                 :href="route('activos.index')"
@@ -305,40 +263,41 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout.vue";
+import AppLayout from "@/Layouts/AppLayout";
 import { Link } from "@inertiajs/inertia-vue3";
-import SelectInput from "@/Shared/SelectInput";
+import SelectInput from '@/Shared/SelectInput'
+
 export default {
   components: {
-    AppLayout,
+    AppLayout, SelectInput,
     Link,
-    SelectInput,
   },
-  props: {
-    errors: Object,
-    ubicaciones: Array,
-  },
+  props: { activo :Object   ,  ubicaciones: Array},
+  
+
+
+
   data() {
     return {
       form: {
-        codigo_activo: null,
-        modelo_equipo: null,
-        cantidad_activo: null,
-        direccion_ip: null,
-        ubicacion_id: null,
-        tipo_activo: null,
-        serie_activo: null,
-        specs: null,
+        codigo_activo: this.$props.activo.codigo_activo,
+        modelo_equipo: this.$props.activo.modelo_equipo,
+        cantidad_activo: this.$props.activo.cantidad_activo,
+        direccion_ip: this.$props.activo.direccion_ip,
+        ubicacion_id: this.$props.activo.ubicacion_id,
+        tipo_activo: this.$props.activo.tipo_activo,
+        serie_activo: this.$props.activo.serie_activo,
+        specs:this.$props.activo.specs
       },
     };
   },
   methods: {
     submit() {
-      this.$inertia.post(route("activos.store"), this.form);
+      this.$inertia.put(
+        route("activos.update", this.$props.activo.id_activo),
+        this.form
+      );
     },
   },
 };
 </script>
-
-<style>
-</style>

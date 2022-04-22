@@ -101,7 +101,6 @@
                   placeholder="Oficina"
                 />
               </div>
-
             </div>
             <div class="flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5">
               <Link
@@ -157,17 +156,16 @@ export default {
   },
   props: ["ubicacion"],
   data() {
-      return {
-          form: {
-              area: this.$props.ubicacion.area,
+    return {
+      form: {
+        area: this.$props.ubicacion.area,
         piso: this.$props.ubicacion.piso,
         oficina: this.$props.ubicacion.oficina,
       },
     };
   },
   methods: {
-      submit() {
-    
+    submit() {
       this.$inertia.put(
         route("ubicaciones.update", this.$props.ubicacion.id),
         this.form

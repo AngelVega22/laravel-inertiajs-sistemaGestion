@@ -24,7 +24,7 @@
             "
             type="button"
           >
-            Nuevo</Link
+            Agregar</Link
           >
           <table
             class="

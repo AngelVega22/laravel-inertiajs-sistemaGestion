@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('activos', function (Blueprint $table) {
             $table ->engine="InnoDB";
-            $table->id();
+            $table->id('id_activo');
             $table -> string('codigo_activo');
-            $table -> integer('estado_activo');
+            $table -> integer('estado_activo') ->default(1);
             $table -> string('modelo_equipo');
             $table -> string('serie_activo');
             $table -> string('tipo_activo');

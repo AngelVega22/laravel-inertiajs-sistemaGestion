@@ -16,4 +16,7 @@ class Activo extends Model
     public function ubicaciones(){
         return $this->belongsTo(Ubicacion::class,'ubicacion_id');
     }
+    protected $primaryKey = 'id_activo';
+
+
 }

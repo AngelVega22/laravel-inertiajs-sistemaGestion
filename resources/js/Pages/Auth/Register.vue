@@ -7,6 +7,7 @@ import JetInput from '@/Jetstream/Input.vue';
 import JetCheckbox from '@/Jetstream/Checkbox.vue';
 import JetLabel from '@/Jetstream/Label.vue';
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue';
+import AppLayout from "@/Layouts/AppLayout.vue";
 
 const form = useForm({
     name: '',
@@ -24,11 +25,17 @@ const submit = () => {
 </script>
 
 <template>
+  <app-layout>
+    <template #header>
+      <h1 class="font-semibold text-xl text-gray-800 leading-tight">Registro de usuario</h1>
+    </template>
     <Head title="Register" />
 
     <JetAuthenticationCard>
         <template #logo>
-            <JetAuthenticationCardLogo />
+            <!-- <JetAuthenticationCardLogo /> -->
+                            <img width="140" src="https://grupoimagensac.com.pe/images/logo-azul.png" alt="" srcset="">
+
         </template>
 
         <JetValidationErrors class="mb-4" />
@@ -105,4 +112,5 @@ const submit = () => {
             </div>
         </form>
     </JetAuthenticationCard>
+    </app-layout>
 </template>

@@ -224,7 +224,7 @@
                   "
                   >Tipo </label
                 >
-                <input
+                <!-- <input
                   id="tipo_equipo"
                   v-model="form.tipo_activo"
                   class="
@@ -240,7 +240,14 @@
                   "
                   type="text"
                   placeholder="Tipo"
-                />
+                /> -->
+                           <select-input v-model="form.tipo_activo" label="tipo">
+                  <option value="PC">PC</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Anexo">Anexo</option>
+                  <option value="Celular">Celular</option>
+                  <option value="Otro">Otro</option>
+                </select-input>
               </div>
           
             </div>

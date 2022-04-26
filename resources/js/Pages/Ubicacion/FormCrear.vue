@@ -20,6 +20,11 @@
                     v-model="form.area"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Area" 
                     />
+                        <div
+                  v-if="errors.area"
+                  v-text="errors.area"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
                 </div>
                 
                 <div class="grid grid-cols-1">
@@ -29,6 +34,11 @@
                         v-model="form.piso"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Piso" 
                     />
+                        <div
+                  v-if="errors.piso"
+                  v-text="errors.piso"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
                 </div>
                 </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
@@ -40,6 +50,11 @@
                     v-model="form.oficina"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Oficina" 
                     />
+                        <div
+                  v-if="errors.oficina"
+                  v-text="errors.oficina"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
                 </div>
                 
    

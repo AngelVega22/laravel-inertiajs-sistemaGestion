@@ -40,6 +40,11 @@
                   type="text"
                   placeholder="Codigo "
                 />
+                <div
+                  v-if="errors.codigo_activo"
+                  v-text="errors.codigo_activo"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
 
               <div class="grid grid-cols-1">
@@ -69,6 +74,11 @@
                   type="text"
                   placeholder="Modelo"
                 />
+                    <div
+                  v-if="errors.modelo_equipo"
+                  v-text="errors.modelo_equipo"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
             </div>
             <div
@@ -101,6 +111,11 @@
                   type="text"
                   placeholder="Cantidad"
                 />
+                    <div
+                  v-if="errors.cantidad_activo"
+                  v-text="errors.cantidad_activo"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
               <div class="grid grid-cols-1">
                 <label
@@ -129,6 +144,11 @@
                   type="text"
                   placeholder="Direccion IP"
                 />
+                    <div
+                  v-if="errors.direccion_ip"
+                  v-text="errors.direccion_ip"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
             </div>
 
@@ -145,7 +165,7 @@
                   "
                   >Tipo</label
                 >
-                <input
+                <!-- <input
                   id="tipo_activo"
                   v-model="form.tipo_activo"
                   class="
@@ -161,7 +181,19 @@
                   "
                   type="text"
                   placeholder="Tipo"
-                />
+                /> -->
+                <select-input v-model="form.tipo_activo" label="tipo">
+                  <option value="PC">PC</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Anexo">Anexo</option>
+                  <option value="Celular">Celular</option>
+                  <option value="Otro">Otro</option>
+                </select-input>
+                    <div
+                  v-if="errors.tipo_activo"
+                  v-text="errors.tipo_activo"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
               <div class="grid grid-cols-1">
                 <label
@@ -199,6 +231,11 @@
                     {{ ubicacion.area }}
                   </option>
                 </select-input>
+                    <div
+                  v-if="errors.ubicacion_id"
+                  v-text="errors.ubicacion_id"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
             </div>
             <div
@@ -231,6 +268,11 @@
                   type="text"
                   placeholder="Serie"
                 />
+                    <div
+                  v-if="errors.serie_activo"
+                  v-text="errors.serie_activo"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
               <div class="grid grid-cols-1">
                 <label
@@ -259,6 +301,11 @@
                   type="text"
                   placeholder="Especificaciones"
                 />
+                    <div
+                  v-if="errors.specs"
+                  v-text="errors.specs"
+                  class="text-red-500 text-xs mt-1"
+                ></div>
               </div>
             </div>
             <div class="flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5">
@@ -308,6 +355,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import SelectInput from "@/Shared/SelectInput";
+
 export default {
   components: {
     AppLayout,

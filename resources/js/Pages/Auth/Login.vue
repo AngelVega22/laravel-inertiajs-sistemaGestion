@@ -34,7 +34,9 @@ const submit = () => {
 
     <JetAuthenticationCard>
         <template #logo>
-            <JetAuthenticationCardLogo />
+            <!-- <JetAuthenticationCardLogo /> -->
+                <img width="140" src="https://grupoimagensac.com.pe/images/logo-azul.png" alt="" srcset="">
+
         </template>
 
         <JetValidationErrors class="mb-4" />

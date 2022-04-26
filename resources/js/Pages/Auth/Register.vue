@@ -31,12 +31,19 @@ const submit = () => {
     </template>
     <Head title="Register" />
 
-    <JetAuthenticationCard>
-        <template #logo>
+    <!-- <JetAuthenticationCard> -->
+            <div class="mt-5 flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+ 
+
+
+
+       
             <!-- <JetAuthenticationCardLogo /> -->
                             <img width="140" src="https://grupoimagensac.com.pe/images/logo-azul.png" alt="" srcset="">
 
-        </template>
+     
 
         <JetValidationErrors class="mb-4" />
 
@@ -111,6 +118,8 @@ const submit = () => {
                 </JetButton>
             </div>
         </form>
-    </JetAuthenticationCard>
+        </div>
+          </div>
+    <!-- </JetAuthenticationCard> -->
     </app-layout>
 </template>

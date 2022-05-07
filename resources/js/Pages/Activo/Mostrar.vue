@@ -22,8 +22,8 @@
             "
             type="button"
           >
-            Agregar </Link
-          >
+            Agregar
+          </Link>
           <table
             class="
               rounded-t-lg
@@ -92,7 +92,7 @@
                 >
                   Tipo
                 </th>
-                          <th
+                <th
                   scope="col"
                   class="
                     px-6
@@ -106,7 +106,7 @@
                 >
                   Serie
                 </th>
-                          <th
+                <th
                   scope="col"
                   class="
                     px-6
@@ -134,7 +134,7 @@
                 >
                   Area
                 </th>
-                      <th
+                <th
                   scope="col"
                   class="
                     px-6
@@ -147,6 +147,20 @@
                   "
                 >
                   Piso
+                </th>
+                <th
+                  scope="col"
+                  class="
+                    px-6
+                    py-3
+                    text-center text-xs
+                    font-medium
+                    text-gray-100
+                    uppercase
+                    tracking-wider
+                  "
+                >
+                  Estado
                 </th>
                 <th
                   scope="col"
@@ -218,7 +232,7 @@
                 >
                   {{ activo.tipo_activo }}
                 </td>
-                    <td
+                <td
                   scope="col"
                   class="
                     px-6
@@ -232,7 +246,7 @@
                 >
                   {{ activo.serie_activo }}
                 </td>
-    <td
+                <td
                   scope="col"
                   class="
                     px-6
@@ -258,11 +272,9 @@
                     tracking-wider
                   "
                 >
-                
-                    {{ activo.area }}
-             
+                  {{ activo.area }}
                 </td>
-       <td
+                <td
                   scope="col"
                   class="
                     px-6
@@ -274,9 +286,22 @@
                     tracking-wider
                   "
                 >
-                
-                    {{ activo.piso }}
-             
+                  {{ activo.piso }}
+                </td>
+                <td
+                  scope="col"
+                  class="
+                    px-6
+                    py-3
+                    text-center text-xs
+                    font-medium
+                    text-gray-100
+                    uppercase
+                    tracking-wider
+                  "
+                >
+                <div v-if="activo.estado_activo > 0">Asignado</div>
+                <div v-else>No asignado</div>
                 </td>
 
                 <td class="flex justify-center m-2">
@@ -335,7 +360,6 @@ import { Link } from "@inertiajs/inertia-vue3";
 export default {
   props: {
     activos: Object,
-  
   },
   components: {
     AppLayout,

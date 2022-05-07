@@ -17,7 +17,7 @@ return new class extends Migration
             $table ->engine="InnoDB";
             $table->id('id_activo');
             $table -> string('codigo_activo');
-            $table -> integer('estado_activo') ->default(1);
+            $table -> integer('estado_activo') ->default(0);
             $table -> string('modelo_equipo');
             $table -> string('serie_activo');
             $table -> string('tipo_activo');

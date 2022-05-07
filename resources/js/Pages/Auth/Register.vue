@@ -25,10 +25,10 @@ const submit = () => {
 </script>
 
 <template>
-  <app-layout>
+  <!-- <app-layout>
     <template #header>
       <h1 class="font-semibold text-xl text-gray-800 leading-tight">Registro de usuario</h1>
-    </template>
+    </template> -->
     <Head title="Register" />
 
     <!-- <JetAuthenticationCard> -->
@@ -121,5 +121,5 @@ const submit = () => {
         </div>
           </div>
     <!-- </JetAuthenticationCard> -->
-    </app-layout>
+    <!-- </app-layout> -->
 </template>

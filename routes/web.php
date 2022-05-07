@@ -18,13 +18,22 @@ use App\Http\Controllers\ActivoController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Auth/Login', [
-        // 'canLogin' => Route::has('login'),
-        // 'canRegister' => Route::has('register'),
-        // 'laravelVersion' => Application::VERSION,
-        // 'phpVersion' => PHP_VERSION,
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
     ]);
 });
+
+// Route::get('/', function () {
+//     return Inertia::render('Auth/Login', [
+//         // 'canLogin' => Route::has('login'),
+//         // 'canRegister' => Route::has('register'),
+//         // 'laravelVersion' => Application::VERSION,
+//         // 'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::resource('ubicaciones', UbicacionController::class) ->middleware(['auth:sanctum', 'verified']);
 
@@ -35,9 +44,9 @@ Route::resource('activos', ActivoController::class) -> middleware(['auth:sanctum
 //     return Inertia::render('Dashboard');
 // });
 
-Route::middleware(['auth:sanctum' ,'verified']) -> get('register' ,function(){
-    return Inertia::render('Auth/Register');
-});
+// Route::middleware(['auth:sanctum' ,'verified']) -> get('register' ,function(){
+//     return Inertia::render('Auth/Register');
+// });
 
 Route::middleware([
     'auth:sanctum',
